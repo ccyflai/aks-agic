@@ -27,13 +27,16 @@
       "value": "loadBalancer"
     },
     "aksClusterKubernetesVersion": {
-      "value": "1.20.2"
+      "value": "1.21.1"
+    },
+    "aksClusterSkuTier": {
+      "value": "Free"
     },
     "aksClusterAdminUsername": {
       "value": "azadmin"
     },
     "aksClusterSshPublicKey": {
-      "value": "<YOUR-SSH-KEY>"
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9MNQIilXaAxxqaEwmIMr4g5z8H3uEXO9NKQ9/b/p8YEug+QNOVbHf3K3ecQcbo1LsOowFK4ElCjijtYQzsAzfTRr2AQ+jkvVL/fFtFDJHdB1atiygLNkkFSaFB9CdxmnjLH8ya4db9QTMD1WiMcsXCAa9Zdy7e5sR8rXfCg85TDWgP2vlb1hv+CwNG9tP9Ht1K6znShwCClSrBJKyX6BaZ3S7aKPL4WA7L3dkUboK+/NJshTRka2p5sBkV7dS/UqcoO+D0c9cKNqg86zbRTDfsE8uCptmU/mWNzlinDsD4UETaG04Jxhvj/aJp7ihga++s96bV/N1XLN4T5Jg9X09"
     },
     "aadProfileManaged": {
       "value": true
@@ -43,7 +46,7 @@
     },
     "aadProfileAdminGroupObjectIDs": {
       "value": [
-        "<OBJECT-ID-OF-AAD-ADMIN-GROUP>"
+        "24aea9d4-195e-49a8-8650-85476b4289bd"
       ]
     },
     "podIdentityProfileEnabled": {
@@ -53,7 +56,10 @@
       "value": "system"
     },
     "systemNodePoolVmSize": {
-      "value": "Standard_DS3_v2"
+      "value": "Standard_D2as_v4"
+    },
+    "systemNodePoolOsDiskSizeGB": {
+      "value": 50
     },
     "systemNodePoolAgentCount": {
       "value": 3
@@ -73,7 +79,10 @@
       "value": "user"
     },
     "userNodePoolVmSize": {
-      "value": "Standard_DS3_v2"
+      "value": "Standard_E2as_v4"
+    },
+    "userNodePoolOsDiskSizeGB": {
+      "value": 50
     },
     "userNodePoolAgentCount": {
       "value": 3
@@ -114,8 +123,11 @@
     "logAnalyticsRetentionInDays": {
       "value": 60
     },
+    "vmName": {
+      "value": "AksJumpbox"
+    },
     "vmSize": {
-      "value": "Standard_F4s_v2"
+      "value": "Standard_B1ms"
     },
     "imagePublisher": {
       "value": "Canonical"
@@ -127,13 +139,13 @@
       "value": "18.04-LTS"
     },
     "authenticationType": {
-      "value": "password"
+      "value": "sshPublicKey"
     },
     "vmAdminUsername": {
       "value": "azadmin"
     },
     "vmAdminPasswordOrKey": {
-      "value": "<YOU-PASSWORD>"
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9MNQIilXaAxxqaEwmIMr4g5z8H3uEXO9NKQ9/b/p8YEug+QNOVbHf3K3ecQcbo1LsOowFK4ElCjijtYQzsAzfTRr2AQ+jkvVL/fFtFDJHdB1atiygLNkkFSaFB9CdxmnjLH8ya4db9QTMD1WiMcsXCAa9Zdy7e5sR8rXfCg85TDWgP2vlb1hv+CwNG9tP9Ht1K6znShwCClSrBJKyX6BaZ3S7aKPL4WA7L3dkUboK+/NJshTRka2p5sBkV7dS/UqcoO+D0c9cKNqg86zbRTDfsE8uCptmU/mWNzlinDsD4UETaG04Jxhvj/aJp7ihga++s96bV/N1XLN4T5Jg9X09"
     }
   }
 }

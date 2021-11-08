@@ -754,7 +754,7 @@
       }
     },
     "acrGeoReplicationLocation": {
-      "defaultValue": "eastus",
+      "defaultValue": "eastasia",
       "type": "string",
       "allowedValues": [
         "australiasoutheast",
@@ -927,6 +927,7 @@
     "applicationGatewayUserDefinedManagedIdentityId": "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities',variables('applicationGatewayUserDefinedManagedIdentityName'))]",
     "aadPodIdentityUserDefinedManagedIdentityName": "[concat(parameters('aksClusterName'), 'AadPodManagedIdentity')]",
     "aadPodIdentityUserDefinedManagedIdentityId": "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities',variables('aadPodIdentityUserDefinedManagedIdentityName'))]",
+    "nodeResourceGroupName": "[concat('rg-', parameters('aksClusterName'), '-nodepools')]",
     "vmSubnetNsgName": "[concat(parameters('vmSubnetName'), 'Nsg')]",
     "vmSubnetNsgId": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('vmSubnetNsgName'))]",
     "virtualNetworkId": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
@@ -1857,6 +1858,7 @@
             }
           }
         },
+        "nodeResourceGroup": "[variables('nodeResourceGroupName')]",
         "podIdentityProfile": {
           "enabled": "[parameters('podIdentityProfileEnabled')]"
         },
